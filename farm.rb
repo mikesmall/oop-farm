@@ -9,11 +9,14 @@ def menu
 end#menu
 
 def print_menu
-  puts '[1] Field'
-  puts '[2] Harvest'
-  puts '[3] Status'
-  puts '[4] Relax'
-  puts '[5] Exit'
+  puts '---------------------------------------------------------'
+  puts 'Options:'
+  puts '[1] Field -- adds a new field'
+  puts '[2] Harvest -- harvests crops and adds to total harvested'
+  puts '[3] Status -- displays some information about the farm'
+  puts '[4] Relax -- provides lovely descriptions of your fields'
+  puts '[5] Exit -- exits this program'
+  puts '---------------------------------------------------------'
   puts 'Enter a number: '
 end#print_menu
 
@@ -30,6 +33,13 @@ end#call_option
 # Menu option 1
 def new_field
   # You can add fields of choice to your farm by specifying their type (eg. "corn") and their total area in hectares (eg. 100).
+  print 'What type of crop? '
+   crop_type = gets.chomp
+   print 'How many hectares? '
+   crop_hectares = gets.to_i
+   print 'Enter Email Address: '
+   food_per_hectare = gets.to_i
+   Crop.new_field(crop_type, crop_hectares, food_per_hectare)
 end#new_field
 
 # Menu option 2
