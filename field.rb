@@ -2,6 +2,8 @@ class Crop
 
   attr_reader :crop_type, :field_hectares, :food_per_hectare
 
+  @@fields = []
+
   def initialize(crop_type, crop_hectares, food_per_hectare)
     @crop_type = crop_type
     @crop_hectares = field_hectares
@@ -10,6 +12,9 @@ class Crop
 
   # Menu option 1 -- NEW FIELD
   def self.new_field
+    new_field = Crop.new(crop_type, field_hectares, food_per_hectare)
+    @@fields << new_field
+    return new_field 
   end#self.new_field
 
   # Menu option 2 -- HARVEST
@@ -30,7 +35,7 @@ class Crop
   # Menu option 5 -- EXIT
   # No additional code needed here.
 
-  
+
 
 
 
