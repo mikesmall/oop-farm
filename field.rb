@@ -6,7 +6,7 @@ class Crop
 
   def initialize(crop_type, crop_hectares, food_per_hectare)
     @crop_type = crop_type
-    @crop_hectares = field_hectares
+    @crop_hectares = crop_hectares
     @food_per_hectare = food_per_hectare
     @total_harvested = 0
   end#initialize
@@ -18,15 +18,31 @@ class Crop
     return new_field
   end#self.new_field
 
+  def crop_type
+    @crop_type
+  end
+
+  def crop_hectares
+    @crop_hectares
+  end
+
+  def food_per_hectare
+    @food_per_hectare
+  end
+
+  def total_harvested
+    @total_harvested
+  end
+
   # Menu option 2 -- HARVEST
   def self.harvest
     #  When you harvest, you must collect food from every one of your fields and record how much total food you have collected. It should display all of this information.
     # (Harvest Crops + Add to total harvested)
-    @@fields.each do |collected_food|
-      collected_food == @crop_hectares * @food_per_hectare
-      puts "Today's harvest from #{ self } = #{ collected_food }."
-      @total_harvested == @total_harvested + collected_food
-      puts "All-time total #{ self }harvest = #{ @total_harvested }."
+    @@fields.each do |crop|
+      collected_food = crop.crop_hectares * crop.food_per_hectare
+      puts "Today's harvest from #{crop.crop_type.capitalize} = #{collected_food}."
+      @total_harvested = crop.total_harvested + collected_food
+      puts "All-time total #{crop.crop_type.capitalize} harvest = #{@total_harvested}."
     end#each
   end#self.harvest
 

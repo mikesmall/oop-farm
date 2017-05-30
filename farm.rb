@@ -1,4 +1,6 @@
+require 'pry'
 require_relative 'field.rb'
+
 
 class LetsFarm
 
@@ -45,6 +47,7 @@ class LetsFarm
     crop_type = gets.chomp
     print 'How many hectares? '
     crop_hectares = gets.to_i
+    #binding.pry
     print 'How much food will it produce per hectare? '
     food_per_hectare = gets.to_i
     Crop.new_field(crop_type, crop_hectares, food_per_hectare)
