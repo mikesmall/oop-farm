@@ -1,7 +1,6 @@
 require 'pry'
 require_relative 'field.rb'
 
-
 class LetsFarm
 
   def initialize(crop_type)
@@ -18,14 +17,11 @@ class LetsFarm
 
   def print_menu
     puts '-----------------------------------------------------------'
-    puts 'Options:'
-    puts ' '
     puts '[1] Field ----- adds a new field'
     puts '[2] Harvest --- harvests crops and adds to total harvested'
     puts '[3] Status ---- displays some information about the farm'
     puts '[4] Relax ----- provides lovely descriptions of your fields'
     puts '[5] Exit ------ exits this program'
-    puts ' '
     puts '-----------------------------------------------------------'
     puts 'Pick a number: '
   end#print_menu

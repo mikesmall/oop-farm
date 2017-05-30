@@ -43,28 +43,30 @@ class Crop
       puts "Today's harvest from #{crop.crop_type.capitalize} = #{collected_food}."
       @total_harvested = crop.total_harvested + collected_food
       puts "All-time total #{crop.crop_type.capitalize} harvest = #{@total_harvested}."
+      puts "-----------------------------------------------------------"
     end#each
   end#self.harvest
 
   # Menu option 3 -- STATUS
   def self.status
     # You can also check the status of each field, which is a more direct way of observing the status of your fields (their size and type).
-    @@fields.each do
-      puts "Crop type: #{ @crop_type }"
-      puts "Field size: #{ @crop_hectares } hectares"
-      puts "Food per hectare: #{ @food_per_hectare }"
+    @@fields.each do |crop|
+      puts "Crop type: #{crop.crop_type.capitalize}"
+      puts "Field size: #{crop.crop_hectares} hectares"
+      puts "Food per hectare: #{ crop.food_per_hectare}"
       # It should also tell you how much total food you have produced up until this point.
-      puts "Total #{ self } harvest so far: #{ @total_harvested }."
-      puts "----------------------------------------------"
+      puts "Total #{crop.crop_type.capitalize} harvest so far: #{crop.total_harvested}."
+      puts "-----------------------------------------------------------"
     end#each
   end#self.status
 
   # Menu option 4 -- RELAX
   def self.relax
     # Sometimes a farmer wants to relax. In doing so, you will get a chance to enjoy the beauty of each one of your fields (without harvesting them).
-    @@fields.each do
-      puts "That #{ @crop_type } looks delicious!"
-      puts "All #{ @crop_hectares } of it!"
+    @@fields.each do |crop|
+      puts "That field of #{crop.crop_type.capitalize} looks delicious!"
+      puts "All #{crop.crop_hectares} hectares of it!"
+      puts "-----------------------------------------------------------"
     end#each
   end#self.relax
 
